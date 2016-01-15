@@ -1,0 +1,31 @@
+name: FixLeaves
+version: 0.1.0
+author: totemo
+authors: [totemo]
+description: Fix non-decaying leaves of WorldPainter'd trees.
+website: http://github.com/totemo/FixLeaves
+depend: []
+main: io.totemo.fixleaves.FixLeaves
+permissions:
+  fixleaves.admin:
+    description: Permission to administer the plugin.
+    default: op
+  fixleaves.notify:
+    description: Permission to receive progress notification broadcasts.
+    default: op
+commands:
+  fixleaves:
+    description: Main plugin command.
+    permission: fixleaves.admin
+    usage: |
+      /<command> help: Show usage help.
+      /<command> reload: Reload the configuration.
+      /<command> notify: Toggle notification broadcasts.
+      /<command> debug: Toggle debug logging.
+      /<command> start: Start the conversion.
+      /<command> stop: Stop the conversion.
+      /<command> status: Show current running state, side and index.
+      /<command> period [<num>]: Set or show period in ticks.
+      /<command> side [<num>]: Set or show side in blocks.
+      /<command> index [<num>]: Set or show next converted index.
+      /<command> min_y [<num>]: Set or show minimum converted Y coordinate.
