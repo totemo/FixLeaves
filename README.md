@@ -5,6 +5,8 @@ WorldPainter'd custom trees can lead to non-decaying leaves in the world.  This 
 
 Leaves fixed in this manner will stay undecayed until a block update, even if they are not in range of a log.  Therefore, custom trees that have leaves outside of the range where a log would prevent decay will remain undamaged.
 
+The plugin fixes leaves in a square centred on (0,0) defined by its side length in blocks.  The side length is converted into chunks, then rounded up to the nearest odd number to give the affected area.  One chunk is converted per `period` ticks, where `period` is specified by `/fixleaves period <num>`.
+
 Player-placed leaves will be set to decayable, but again, won't decay until a block update.  In any case, this plugin was written to fix a problem early in the life of a new map, when the number of WorldPainter'd leaves vastly outnumbers the number of player-placed ones.
 
 To fix player placed leaves, you can redo the players leaf edits within a selection, e.g. using LogBlock:
