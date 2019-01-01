@@ -1,5 +1,5 @@
 name: FixLeaves
-version: 0.1.0
+version: 0.1.1
 author: totemo
 authors: [totemo]
 description: Fix non-decaying leaves of WorldPainter'd trees.
