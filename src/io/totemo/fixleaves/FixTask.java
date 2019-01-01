@@ -6,6 +6,7 @@ import org.bukkit.Chunk;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.block.Block;
+import org.bukkit.block.data.type.Leaves;
 
 // ----------------------------------------------------------------------------
 /**
@@ -155,8 +156,8 @@ public class FixTask implements Runnable {
                 for (int zB = 0; zB < 16; ++zB) {
                     for (int yB = FixLeaves.CONFIG.MIN_Y; yB < 256; ++yB) {
                         Block block = chunk.getBlock(xB, yB, zB);
-                        if (block.getType() == Material.LEAVES || block.getType() == Material.LEAVES_2) {
-                            block.setData((byte) (block.getData() & 3));
+                        if (block.getBlockData() instanceof Leaves) {
+                            ((Leaves)block.getBlockData()).setPersistent(false);
                         }
                     }
                 }
